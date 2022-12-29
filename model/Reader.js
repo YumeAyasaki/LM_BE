@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
+const shortid = require('shortid');
 
 const ReaderSchema = mongoose.Schema({
-    id: {
-        type: Number,
-        unique: true
-    },  
+    _id: {
+        'type': String,
+        'default': shortid.generate
+      },
     name : {
         type: String,
         required: true
@@ -31,7 +32,8 @@ const ReaderSchema = mongoose.Schema({
         type: String,
     },
     totalLoan:{
-        type: Number
+        type: Number,
+        default: 0
     }
 });
 

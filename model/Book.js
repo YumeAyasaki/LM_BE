@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
+const shortid = require('shortid');
 
 const BookSchema = mongoose.Schema({
-    id: {
-        type: Number,
-        unique: true
-    },  
+    _id: {
+        'type': String,
+        'default': shortid.generate
+      },
     name: {
         type: String,
         required: true

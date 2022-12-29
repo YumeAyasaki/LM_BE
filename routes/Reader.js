@@ -5,6 +5,6 @@ const Reader = require('../model/Reader');
 
 
 
-router.post('/add', create);
+router.post('/', create);
 
 module.exports = router;

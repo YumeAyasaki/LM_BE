@@ -6,6 +6,6 @@ const Sach = require('../model/Book');
 
 
 router.post('/', create);
-router.get('/:id/', findById);
+router.get('/:_id/', findById);
 router.get('/', findByName);
 module.exports = router;

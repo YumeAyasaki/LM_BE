@@ -5,6 +5,6 @@ const Employee = require('../model/Employee');
 
 
 
-router.post('/add', create);
+router.post('/', create);
 
 module.exports = router;

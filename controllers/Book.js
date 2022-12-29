@@ -1,19 +1,8 @@
 const Book = require('../model/Book');
 
-let currentId;
-
-Book.find(function (err, db) {
-    if (err) return console.error(err);
-    if (db.length == 0) currentId = 0;
-    else currentId = db[db.length - 1].id;
-});
-
-
 const create =async (req,res) =>{
     try {   
-        currentId ++;
         let book = new Book(req.body);
-        book.id = currentId;
         const savedBook = await book.save();
         res.json(savedBook);
     } catch (error) {
@@ -36,10 +25,9 @@ const findByName = async(req, res) =>{
 
 const findById = async(req, res) =>{
     try {
-        const book = await Book.find({ id: req.params.id});
+        const book = await Book.find({ _id: req.params._id});
         res.status(200).json(book);
     } catch (error) {
-        console.log("error");
         res.json({message:error});
     }
 }
