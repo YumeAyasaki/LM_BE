@@ -1,4 +1,4 @@
-const DocGia = require('../model/docGia');
+const DocGia = require('../model/DocGia');
 
 let currentId;
 
@@ -12,16 +12,8 @@ DocGia.find(function (err, db) {
 const lapThe =async (req,res) =>{
 
     currentId ++;
-    const docGia = new DocGia({
-        id: currentId,
-        hoVaTen: req.body.hoVaTen,
-        loai: req.body.loai,
-        ngaySinh: req.body.ngaySinh,
-        email: req.body.email,
-        diaChi: req.body.diaChi,
-        ngayLapThe: req.body.ngayLapThe,
-        nguoiLapThe: req.body.nguoiLapThe
-    });
+    let docGia = new DocGia(req.body);
+    docGia.id = currentId;
     try {
         const savedDocGia = await docGia.save();
         res.json(savedDocGia);

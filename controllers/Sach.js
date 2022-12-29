@@ -12,17 +12,8 @@ Sach.find(function (err, db) {
 const themSach =async (req,res) =>{
 
     currentId ++;
-    const sach = new Sach({
-        id: currentId,
-        tenSach: req.body.tenSach,
-        theLoai: req.body.theLoai,
-        tacGia:  req.body.tacGia,
-        namXuatBan: req.body.namXuatBan,
-        nhaXuatBan: req.body.nhaXuatBan,
-        ngayNhap: req.body.ngayNhap,
-        triGia: req.body.triGia,
-        nguoiTiepNhan: req.body.nguoiTiepNhan
-    });
+    let sach = new Sach(req.body);
+    sach.id = currentId;
     try {
         const savedSach = await sach.save();
         res.json(savedSach);

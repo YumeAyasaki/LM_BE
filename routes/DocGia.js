@@ -1,7 +1,7 @@
 const express = require('express');
-const { lapThe } = require('../controllers/LapTheDocGia');
+const { lapThe } = require('../controllers/DocGia');
 const router = express.Router();
-const DocGia = require('../model/docGia');
+const DocGia = require('../model/DocGia');
 
 
 

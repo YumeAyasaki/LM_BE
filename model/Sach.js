@@ -11,36 +11,29 @@ const SachSchema = mongoose.Schema({
     },
     theLoai: {
         type: String,
-        required:true,
 
     },
     tacGia: {
         type: String,
-        required:true,
 
     },
     namXuatBan: {
         type: Number,
-        required:true,
 
     },
     nhaXuatBan: {
         type: String,
-        required:true,
 
     },
     ngayNhap: {
         type: Date,
-        required:true,
 
     },
     triGia: {
         type: Number,
-        required: true
     },
     nguoiTiepNhan: {
         type: String,
-        required: true
     },
     trangThai:{
         type: Boolean,

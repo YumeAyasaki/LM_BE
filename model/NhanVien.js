@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const DocGiaSchema = mongoose.Schema({
+const NhanVienSchema = mongoose.Schema({
     id: {
         type: Number,
         unique: true
@@ -9,30 +9,25 @@ const DocGiaSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    loai: {
+    diaChi: {
         type: String,
     },
-    email: {
+    soDienThoai: {
         type: String,
-
     },
     ngaySinh: {
         type: Date,
     },
-    diaChi: {
+    bangCap: {
         type: String,
     },
-    ngayLapThe: {
-        type: Date,
-
-    },
-    nguoiLapThe: {
+    chucVu: {
         type: String,
     },
-    tongNo:{
-        type: Number
-    }
+    boPhan: {
+        type: String,
+    },
 });
 
- module.exports = mongoose.model('DocGia', DocGiaSchema);
+ module.exports = mongoose.model('NhanVien', NhanVienSchema);
 
