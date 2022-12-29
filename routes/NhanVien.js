@@ -5,6 +5,6 @@ const NhanVien = require('../model/NhanVien');
 
 
 
-router.post('/', themNhanVien);
+router.post('/add', themNhanVien);
 
 module.exports = router;

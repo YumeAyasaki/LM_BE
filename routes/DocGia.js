@@ -5,6 +5,6 @@ const DocGia = require('../model/DocGia');
 
 
 
-router.post('/', lapThe);
+router.post('/add', lapThe);
 
 module.exports = router;

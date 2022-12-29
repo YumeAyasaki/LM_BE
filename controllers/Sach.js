@@ -22,4 +22,14 @@ const themSach =async (req,res) =>{
     }
 }
 
-module.exports = {themSach}
+const danhSachSach = async(req, res) =>{
+    try {
+        const sach_es = Sach.find({tenSach: req.body.tenSach},  function (err, docs) {
+            res.send(docs);
+        })
+    } catch (error) {
+        res.json({message:error});
+    }
+}
+
+module.exports = {themSach, danhSachSach}
