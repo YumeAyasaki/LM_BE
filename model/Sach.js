@@ -10,7 +10,6 @@ const SachSchema = mongoose.Schema({
     },
     theLoai: {
         type: String,
-        required: true
     },
     tacGia: {
         type: String,

@@ -1,10 +1,19 @@
 const Sach = require('../model/Sach');
 
-count = 0;
+let currentId;
+
+Sach.find(function (err, db) {
+    if (err) return console.error(err);
+    if (db.length == 0) currentId = 0;
+    else currentId = db[db.length - 1].id;
+});
+
+
 const themSach =async (req,res) =>{
-    count ++;
+
+    currentId ++;
     const sach = new Sach({
-        id: count,
+        id: currentId,
         tenSach: req.body.tenSach,
         theLoai: req.body.theLoai,
         tacGia:  req.body.tacGia,
