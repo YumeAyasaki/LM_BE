@@ -8,13 +8,13 @@ app.use(bodyParser.json())
 
 
 //Import routes
-const SachRoute = require('./routes/Sach');
-const DocGiaRoute = require('./routes/DocGia');
-const NhanVienRoute = require('./routes/NhanVien');
+const BookRoute = require('./routes/Book');
+const ReaderRoute = require('./routes/Reader');
+const EmployeeRoute = require('./routes/Employee');
 // ==============
-app.use('/Sach', SachRoute);
-app.use('/DocGia', DocGiaRoute);
-app.use('/NhanVien', NhanVienRoute);
+app.use('/Book', BookRoute);
+app.use('/Reader', ReaderRoute);
+app.use('/Employee', EmployeeRoute);
 
 
 // Connect to DB

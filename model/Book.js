@@ -1,45 +1,44 @@
 const mongoose = require('mongoose');
 
-const SachSchema = mongoose.Schema({
+const BookSchema = mongoose.Schema({
     id: {
         type: Number,
         unique: true
     },  
-    tenSach: {
+    name: {
         type: String,
         required: true
     },
-    theLoai: {
+    genres: {
         type: String,
 
     },
-    tacGia: {
+    author: {
         type: String,
 
     },
-    namXuatBan: {
+    year: {
         type: Number,
 
     },
-    nhaXuatBan: {
+    publisher: {
         type: String,
-
     },
-    ngayNhap: {
+    inputDate: {
         type: Date,
-
+        default: () =>Date.now()
     },
-    triGia: {
+    price: {
         type: Number,
     },
-    nguoiTiepNhan: {
+    importer: {
         type: String,
     },
-    trangThai:{
+    state:{
         type: Boolean,
-        default: true // True tuc la chua muon 
+        default: true // True means this book is available
     }
 });
 
- module.exports = mongoose.model('Sach', SachSchema);
+ module.exports = mongoose.model('Book', BookSchema);
 

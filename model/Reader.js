@@ -1,33 +1,39 @@
 const mongoose = require('mongoose');
 
-const NhanVienSchema = mongoose.Schema({
+const ReaderSchema = mongoose.Schema({
     id: {
         type: Number,
         unique: true
     },  
-    hoVaTen : {
+    name : {
         type: String,
         required: true
     },
-    diaChi: {
+    type: {
         type: String,
     },
-    soDienThoai: {
+    email: {
         type: String,
+
     },
-    ngaySinh: {
+    dateOfBirth: {
         type: Date,
     },
-    bangCap: {
+    address: {
         type: String,
     },
-    chucVu: {
+    createAt: {
+        type: Date,
+        default: () =>Date.now(),
+
+    },
+    createPerson: {
         type: String,
     },
-    boPhan: {
-        type: String,
-    },
+    totalLoan:{
+        type: Number
+    }
 });
 
- module.exports = mongoose.model('NhanVien', NhanVienSchema);
+ module.exports = mongoose.model('Reader', ReaderSchema);
 

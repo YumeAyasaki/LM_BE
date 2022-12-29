@@ -1,38 +1,33 @@
 const mongoose = require('mongoose');
 
-const DocGiaSchema = mongoose.Schema({
+const EmployeeSchema = mongoose.Schema({
     id: {
         type: Number,
         unique: true
     },  
-    hoVaTen : {
+    name : {
         type: String,
         required: true
     },
-    loai: {
+    address: {
         type: String,
     },
-    email: {
+    phoneNumber: {
         type: String,
-
     },
-    ngaySinh: {
+    dateOfBirth: {
         type: Date,
     },
-    diaChi: {
+    degree: {
         type: String,
     },
-    ngayLapThe: {
-        type: Date,
-
-    },
-    nguoiLapThe: {
+    position: {
         type: String,
     },
-    tongNo:{
-        type: Number
-    }
+    department: {
+        type: String,
+    },
 });
 
- module.exports = mongoose.model('DocGia', DocGiaSchema);
+ module.exports = mongoose.model('Employee', EmployeeSchema);
 
