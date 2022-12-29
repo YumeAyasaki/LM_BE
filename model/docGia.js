@@ -1,52 +1,40 @@
 const mongoose = require('mongoose');
 
-const SachSchema = mongoose.Schema({
+const DocGiaSchema = mongoose.Schema({
     id: {
         type: Number,
-        unique: true
     },  
-    tenSach: {
+    hoVaTen : {
         type: String,
         required: true
     },
-    theLoai: {
+    loai: {
+        type: String,
+        required:true,
+    },
+    email: {
         type: String,
         required:true,
 
     },
-    tacGia: {
+    ngaySinh: {
+        type: Date,
+        required:true,
+    },
+    diaChi: {
         type: String,
         required:true,
-
     },
-    namXuatBan: {
-        type: Number,
-        required:true,
-
-    },
-    nhaXuatBan: {
-        type: String,
-        required:true,
-
-    },
-    ngayNhap: {
+    ngayLapThe: {
         type: Date,
         required:true,
 
     },
-    triGia: {
-        type: Number,
-        required: true
-    },
-    nguoiTiepNhan: {
+    nguoiLapThe: {
         type: String,
         required: true
     },
-    trangThai:{
-        type: Boolean,
-        default: true // True tuc la chua muon 
-    }
 });
 
- module.exports = mongoose.model('Sach', SachSchema);
+ module.exports = mongoose.model('DocGia', DocGiaSchema);
 

@@ -1,0 +1,10 @@
+const express = require('express');
+const { lapThe } = require('../controllers/LapTheDocGia');
+const router = express.Router();
+const DocGia = require('../model/docGia');
+
+
+
+router.post('/', lapThe);
+
+module.exports = router;
