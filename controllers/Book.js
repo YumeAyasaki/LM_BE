@@ -13,10 +13,19 @@ const create =async (req,res) =>{
 
 const findByName = async(req, res) =>{
     try {
-        console.log(req.query);
         let name = req.query.name;
-        let regex = new RegExp(`${name}`);
-        const bookList = await Book.find({ name: regex });
+        console.log(req.query);
+        let exactly = Boolean(req.query.exactly);
+        let bookList; 
+        if (exactly == true){
+            bookList = await Book.find({ name: name });
+            console.log(bookList);
+        }
+        else{
+            let regex = new RegExp(`${name}`);
+            bookList = await Book.find({ name: regex });
+        }
+
         res.status(200).json(bookList);
     } catch (error) {
         console.log("error");
