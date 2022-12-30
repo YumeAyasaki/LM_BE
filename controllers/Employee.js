@@ -10,6 +10,16 @@ const create =async (req,res) =>{
     }
 }
 
+const getEmployeeByName = async(req, res)=>{
+    try {
+        let name = req.query.name;
+        console.log(name);
+        const employee = await Employee.find({ name: name });
+        res.status(200).json(employee);
+    } catch (error) {
+        console.log("error");
+        res.json({message:error});
+    }
+}
 
-
-module.exports = {create}
+module.exports = {create, getEmployeeByName}
