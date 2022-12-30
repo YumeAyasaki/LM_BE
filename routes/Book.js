@@ -1,7 +1,7 @@
 const express = require('express');
-const { create, danhSachSach, findById, findByName } = require('../controllers/Book');
+const { create, findById, findByName } = require('../controllers/Book');
 const router = express.Router();
-const Sach = require('../model/Book');
+const Book = require('../model/Book');
 
 
 

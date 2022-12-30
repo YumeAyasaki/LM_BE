@@ -13,7 +13,9 @@ const create =async (req,res) =>{
 
 const findByName = async(req, res) =>{
     try {
-        let regex = new RegExp(`${req.body.name}`);
+        console.log(req.query);
+        let name = req.query.name;
+        let regex = new RegExp(`${name}`);
         const bookList = await Book.find({ name: regex });
         res.status(200).json(bookList);
     } catch (error) {
@@ -31,5 +33,6 @@ const findById = async(req, res) =>{
         res.json({message:error});
     }
 }
+
 
 module.exports = {findByName, create, findById}

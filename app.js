@@ -11,10 +11,12 @@ app.use(bodyParser.json())
 const BookRoute = require('./routes/Book');
 const ReaderRoute = require('./routes/Reader');
 const EmployeeRoute = require('./routes/Employee');
+const BookLoanRoute = require('./routes/BookLoan')
 // ==============
 app.use('/Book', BookRoute);
 app.use('/Reader', ReaderRoute);
 app.use('/Employee', EmployeeRoute);
+app.use('/BookLoan', BookLoanRoute);
 
 
 // Connect to DB
