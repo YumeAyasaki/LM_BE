@@ -21,4 +21,23 @@ const getReaderById = async(req, res) =>{
     }
 }
 
-module.exports = {create, getReaderById}
+const update = async(req, res) =>{
+    try {
+        const updates = {
+            email: req.body.email,
+            address: req.body.address,
+            createAt: req.body.createAt,
+            totalLoan: req.body.totalLoan,
+            name: req.body.name,
+            type: req.body.type,
+            dateOfBirth: req.body.dateOfBirth,
+            createPerson: req.body.createPerson,
+        }
+        console.log(updates);
+        const savedReader = await Reader.findOneAndUpdate({_id: req.body._id}, updates);
+        res.status(200).json(savedReader);
+    } catch (error) {
+        res.json({message:error});
+    }
+}
+module.exports = {create, getReaderById, update}
