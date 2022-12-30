@@ -34,5 +34,23 @@ const findById = async(req, res) =>{
     }
 }
 
+const loan = async(req, res) =>{
+    try {
+        const savedBook = await Book.findOneAndUpdate({_id: req.params._id}, {state: false});
+        res.status(200).json(savedBook);
+    } catch (error) {
+        res.json({message:error});
+    }
+}
 
-module.exports = {findByName, create, findById}
+const returnBook = async(req, res) =>{
+    try {
+        const savedBook =  await Book.findOneAndUpdate({_id: req.params._id}, {state: true});
+        res.status(200).json(savedBook);
+    } catch (error) {
+        res.json({message:error});
+    }
+}
+
+
+module.exports = {findByName, create, findById, loan, returnBook}
